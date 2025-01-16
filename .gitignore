@@ -1,0 +1,9 @@
+# Ignorar arquivos específicos
+dados/jogadores_fifa_2024_limpo.csv
+dados/jogadores_fifa_2024_bruto.csv
+
+# Ignorar todos os arquivos na pasta recomendacoes
+recomendacoes/
+
+# Garantir que outros arquivos/diretórios sejam rastreados
+!*/

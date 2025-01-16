@@ -4,6 +4,7 @@ Sistema de Recomendação de Jogadores
 Link para acessar os dados brutos iniciais no Kaggle - aqui - https://www.kaggle.com/datasets/joebeachcapital/fifa-players/data
 
 Repositório base para artigo publicado no Medium - E se as contratações fossem baseadas somente em ratings? - Sistemas de Recomendação em busca de jogadores similares
+Link - https://medium.com/@andrefeitosa9/e-se-as-contratações-fossem-baseadas-somente-em-ratings-669d1773abd6
 
 Este é um projeto de Sistema de Recomendação de Jogadores, criado com o objetivo de ajudar a identificar jogadores que se encaixem em requisitos específicos, usando técnicas de aprendizado de máquina e análise de dados.
 

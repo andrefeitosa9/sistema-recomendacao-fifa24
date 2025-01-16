@@ -28,12 +28,19 @@ Matplotlib e Seaborn para visualizações gráficas
 🗂 Estrutura do Projeto
 
 📁 sistema-recomendacao-jogadores
+
 ├── 📁 dados
+
 │   ├── jogadores_fifa_2024_bruto.csv  # Dataset principal
+
 ├── 📁 recomendacoes                   # Pasta com recomendacoes
+
 │   ├── ...      
+
 ├── requirements.txt                   # Dependências do projeto
+
 └── README.md                          # Documentação do projeto
+
 
 🔧 Como Configurar o Projeto
 

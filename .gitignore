@@ -1,6 +1,5 @@
 # Ignorar arquivos específicos
-dados/jogadores_fifa_2024_limpo.csv
-dados/jogadores_fifa_2024_bruto.csv
+dados/
 
 # Ignorar todos os arquivos na pasta recomendacoes
 recomendacoes/

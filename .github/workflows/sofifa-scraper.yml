@@ -1,7 +1,7 @@
 name: Sofifa Scraper
 
 on:
-  workflow_dispatch:  # Acionamento manual
+  workflow_dispatch:
 
 jobs:
   scraper:
@@ -9,23 +9,27 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  # Atualizado para v4
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4  # Atualizado para v4
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'  # Recomendado usar Node.js 20 (LTS)
+          node-version: '20'
+          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies (scraping)
+        run: |
+          cd scraping  # Entra na pasta scraping
+          npm ci       # Instala as dependências
 
       - name: Run scraper
         run: |
+          cd scraping
           npm run download-urls
           npm run full
 
-      - name: Upload data to GitHub Actions artifacts
-        uses: actions/upload-artifact@v4  # Versão mais recente e estável
+      - name: Upload dados coletados
+        uses: actions/upload-artifact@v4
         with:
           name: players-data
-          path: ./data  # Certifique-se de que este caminho está correto
+          path: scraping/output  # Caminho dos arquivos de saída

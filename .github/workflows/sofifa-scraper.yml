@@ -15,16 +15,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'npm'  # Habilita cache de dependências
 
       - name: Install dependencies (scraping)
-        run: |
-          cd scraping  # Entra na pasta scraping
-          npm ci       # Instala as dependências
+        working-directory: ./scraping  # Instala dependências dentro da pasta scraping
+        run: npm ci  # Usa npm ci para instalação limpa (recomendado em CI)
 
       - name: Run scraper
+        working-directory: ./scraping  # Executa os comandos dentro da pasta scraping
         run: |
-          cd scraping
           npm run download-urls
           npm run full
 
@@ -32,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: players-data
-          path: scraping/output  # Caminho dos arquivos de saída
+          path: data/  # Caminho dos arquivos de saída (na raiz)

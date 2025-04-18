@@ -9,16 +9,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4  # Atualizado para v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4  # Atualizado para v4
         with:
-          node-version: '16'
+          node-version: '20'  # Recomendado usar Node.js 20 (LTS)
 
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
 
       - name: Run scraper
         run: |
@@ -26,7 +25,7 @@ jobs:
           npm run full
 
       - name: Upload data to GitHub Actions artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # Versão mais recente e estável
         with:
           name: players-data
-          path: ./data  # ajuste se os dados forem salvos em outro lugar
+          path: ./data  # Certifique-se de que este caminho está correto

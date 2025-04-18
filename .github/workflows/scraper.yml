@@ -1,0 +1,32 @@
+name: Sofifa Scraper
+
+on:
+  workflow_dispatch:  # Acionamento manual
+
+jobs:
+  scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run scraper
+        run: |
+          npm run download-urls
+          npm run full
+
+      - name: Upload data to GitHub Actions artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: players-data
+          path: ./data  # Ajuste o caminho conforme onde os dados são salvos

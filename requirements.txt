@@ -3,6 +3,6 @@ seaborn
 matplotlib
 numpy
 scikit-learn
-sofifa-scraper
-playwright
-beautifulsoup4
+fastparquet
+pyarrow
+streamlit
